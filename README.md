@@ -16,7 +16,7 @@ https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions
 
 Then, it retrieves the PubMed ID (PMID), publication date, the list of authors (separated by semicolon),
 the journal name, DOI, Keywords and Abstract.
-And finally saves the info in a table (MS Excel .xlsx format) in the current directory.
+And finally saves the info in a table (in MS Excel .xlsx format) in the current directory.
 
 
 ### REQUISITES
