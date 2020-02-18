@@ -11,7 +11,7 @@
 # This code asks the user for a query to be searched in PubMed. This can include Field Tags:
 # https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and
 # Then, it retrieves the PubMed ID (PMID), publication date, the list of authors (separated by semicolon),
-# the journal name, DOI, Keywords and Abstract.
+# the title, journal name, DOI, keywords and abstract.
 # And finally saves the info in a table (in MS Excel .xlsx format) in the current directory.
 
 #------------#
@@ -46,6 +46,7 @@ results = pubmed.query(query, max_results=500)
 articles_df = pd.DataFrame(columns = ['PMID',
                                       'Publication_date',
                                       'Authors',
+                                      'Title',
                                       'Journal',
                                       'DOI',
                                       'Keywords',
@@ -61,6 +62,7 @@ for article in results:
     articles_df = articles_df.append({'PMID': article.pubmed_id.partition('\n')[0],
                                       'Publication_date': article.publication_date,
                                       'Authors': string_authors,
+                                      'Title': article.title,
                                       'Journal': article.journal,
                                       'DOI': article.doi,
                                       'Keywords': article.keywords,
