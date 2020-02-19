@@ -56,7 +56,7 @@ my_email = input("Provide your e-mail address (optional): ")
 
 # Consult PubMed:
 pubmed = PubMed(tool="PubMedSearcher", email = my_email)
-results = pubmed.query(query, max_results=500)
+results = pubmed.query(query, max_results=2500)
 
 # Create an empty Dataframe with just the column names:
 articles_df = pd.DataFrame(columns = ['PMID',
