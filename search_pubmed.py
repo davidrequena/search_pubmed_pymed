@@ -53,10 +53,11 @@ import time
 # User inputs:
 query = input("Provide a query for PubMed (can include field tags): ")
 my_email = input("Provide your e-mail address (optional): ")
+max_results = input("Maximum number of results: ")
 
 # Consult PubMed:
 pubmed = PubMed(tool="PubMedSearcher", email = my_email)
-results = pubmed.query(query, max_results=2500)
+results = pubmed.query(query, max_results = int(max_results))
 
 # Create an empty Dataframe with just the column names:
 articles_df = pd.DataFrame(columns = ['PMID',
@@ -71,19 +72,37 @@ articles_df = pd.DataFrame(columns = ['PMID',
 # Now, for each article, fill the dataframe with the info collected:
 for article in results:
 
-    # Extract the first and last name of authors and put them in a nice format:
-    string_authors = '; '.join([a['firstname'] + ' ' + a['lastname'] for a in article.authors])
-    string_keywords = '; '.join(article.keywords)
+    # Handle some exceptions in case of missing information:
+    try:
+        string_keywords = '; '.join([k for k in article.keywords if k is not None])
+    except:
+        string_keywords = "" # If there are no keywords
+
+    try:
+        string_journal = article.journal
+    except:
+        string_journal = "" # If there is no journal name
+
+    try:
+        string_abstract = article.abstract
+    except:
+        string_abstract = "" # If there is no abstract
+
+
+    # Extract the first and last name of authors and put them in a nice format,
+    # filtering out the empty slots:
+    string_authors = '; '.join([a['firstname'] + ' ' + a['lastname'] for a in article.authors
+                                if a['firstname'] is not None and a['firstname'] is not None])
 
     # Collect the article info
     articles_df = articles_df.append({'PMID': article.pubmed_id.partition('\n')[0],
                                       'Publication_date': article.publication_date,
                                       'Title': article.title,
                                       'Authors': string_authors,
-                                      'Journal': article.journal,
+                                      'Journal': string_journal,
                                       'DOI': article.doi,
                                       'Keywords': string_keywords,
-                                      'Abstract': article.abstract}, ignore_index=True)
+                                      'Abstract': string_abstract}, ignore_index=True)
 
 # Print the top 5 rows of the dataframe:
 print("First 5 results:")
