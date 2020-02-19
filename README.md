@@ -38,6 +38,8 @@ First, provide a query. Here you have two equivalent examples:
 
 Second, provide an e-mail address (optional). You can just say no.
 
+Third, the maximum number of results desired.
+
 I'm including an example of the output table.
 
 ### CREDITS
