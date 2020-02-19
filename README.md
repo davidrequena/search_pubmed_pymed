@@ -1,5 +1,6 @@
-# search_pubmed
+# search_pubmed_pymed
 Searches for articles in PubMed using an user input, and outputs an Excel table with the results.
+This scripts uses the python library pymed.
 
 
 ### AUTHOR AND CONTACT
@@ -41,6 +42,11 @@ Second, provide an e-mail address (optional). You can just say no.
 Third, the maximum number of results desired.
 
 I'm including an example of the output table.
+
+
+### LIMITATIONS
+This script truncates the titles and abstracts when the text has italics or special characters. For better results, check my other script search_pubmed_entrez.
+
 
 ### CREDITS
 I used the following links as references:
