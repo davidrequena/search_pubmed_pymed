@@ -14,24 +14,34 @@ Contact: drequena@rockefeller.edu / d.requena.a@gmail.com
 This code asks the user for a query to be searched in PubMed. This can include Field Tags:
 https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and
 
-Then, it retrieves the PubMed ID (PMID), publication date, the list of authors (separated by semicolon),
-the journal name, DOI, Keywords and Abstract.
+Then, it retrieves the PubMed ID (PMID), publication date, the title,
+list of authors (separated by semicolon), journal name, DOI, keywords and abstract.
 And finally saves the info in a table (in MS Excel .xlsx format) in the current directory.
 
 
 ### REQUISITES
-You need to have installed Python 3 and the following modules:
+You need to have installed Python 3 (https://www.python.org/downloads/) and the following modules:
 
-pandas (pip install pandas)
+1. pandas -> can be installed by writting in the Terminal: pip install pandas
+2. pymed -> can be installed by writting in the Terminal: pip install pymed
+3. openpyxl -> can be installed by writting in the Terminal: pip install openpyxl
 
-pymed (pip install pymed)
 
-openpyxl (pip install openpyxl)
+### USAGE
+Just doble-click on the script to execute it. This can also be called from the Terminal.
+Then, the program will ask you to:
 
+  Provide a query. Examples:
+
+    (Fowlpox OR FPV) AND (Reticuloendotheliosis OR REV)
+    (Fowlpox[All Fields] OR FPV[All Fields]) AND (Reticuloendotheliosis[All Fields] OR REV[All Fields])
+
+  Provide an e-mail address (optional). You can just say no.
+
+I'm including an example of the output table.
 
 ### CREDITS
 I used the following links as references:
 
-https://stackoverflow.com/questions/57053378/
-
-https://www.kaggle.com/summerkrankin/pubmed-download-als
+1. https://stackoverflow.com/questions/57053378/
+2. https://www.kaggle.com/summerkrankin/pubmed-download-als
