@@ -17,10 +17,26 @@
 #------------#
 # REQUISITES #
 #------------#
-# You need to have installed Python 3 and the following modules:
-# pandas (pip install pandas)
-# pymed (pip install pymed)
-# openpyxl (pip install openpyxl)
+# You need to have installed Python 3: https://www.python.org/downloads/
+# And the following modules:
+# 1. pandas -> can be installed by writting in the Terminal: pip install pandas
+# 2. pymed -> can be installed by writting in the Terminal: pip install pymed
+# 3. openpyxl -> can be installed by writting in the Terminal: pip install openpyxl
+
+#-------#
+# USAGE #
+#-------#
+# Just doble-click on the script to execute it. This can also be called from the Terminal.
+# Then, the program will ask you to:
+#
+# First, provide a query. Here you have two equivalent examples:
+#
+#     Example 1: (Fowlpox OR FPV) AND (Reticuloendotheliosis OR REV)
+#     Example 2: (Fowlpox[All Fields] OR FPV[All Fields]) AND (Reticuloendotheliosis[All Fields] OR REV[All Fields])
+#
+# Second, provide an e-mail address (optional). You can just say no.
+#
+# I'm including an example of the output table.
 
 #---------#
 # CREDITS #
