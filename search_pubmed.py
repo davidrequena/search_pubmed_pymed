@@ -98,7 +98,7 @@ for article in results:
     # Collect the article info
     articles_df = articles_df.append({u'PMID': article.pubmed_id.partition('\n')[0],
                                       u'Publication_date': article.publication_date,
-                                      u'Title': str(article.title),
+                                      u'Title': article.title,
                                       u'Authors': string_authors,
                                       u'Journal': string_journal,
                                       u'DOI': article.doi,
