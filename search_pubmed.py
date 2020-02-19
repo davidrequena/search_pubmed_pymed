@@ -10,8 +10,8 @@
 #-------------#
 # This code asks the user for a query to be searched in PubMed. This can include Field Tags:
 # https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and
-# Then, it retrieves the PubMed ID (PMID), publication date, the list of authors (separated by semicolon),
-# the title, journal name, DOI, keywords and abstract.
+# Then, it retrieves the PubMed ID (PMID), publication date, the title,
+# list of authors (separated by semicolon), journal name, DOI, keywords and abstract.
 # And finally saves the info in a table (in MS Excel .xlsx format) in the current directory.
 
 #------------#
