@@ -61,8 +61,8 @@ results = pubmed.query(query, max_results=500)
 # Create an empty Dataframe with just the column names:
 articles_df = pd.DataFrame(columns = ['PMID',
                                       'Publication_date',
-                                      'Authors',
                                       'Title',
+                                      'Authors',
                                       'Journal',
                                       'DOI',
                                       'Keywords',
@@ -73,15 +73,16 @@ for article in results:
 
     # Extract the first and last name of authors and put them in a nice format:
     string_authors = '; '.join([a['firstname'] + ' ' + a['lastname'] for a in article.authors])
+    string_keywords = '; '.join(article.keywords)
 
     # Collect the article info
     articles_df = articles_df.append({'PMID': article.pubmed_id.partition('\n')[0],
                                       'Publication_date': article.publication_date,
-                                      'Authors': string_authors,
                                       'Title': article.title,
+                                      'Authors': string_authors,
                                       'Journal': article.journal,
                                       'DOI': article.doi,
-                                      'Keywords': article.keywords,
+                                      'Keywords': string_keywords,
                                       'Abstract': article.abstract}, ignore_index=True)
 
 # Print the top 5 rows of the dataframe:
