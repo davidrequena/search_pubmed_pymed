@@ -35,6 +35,7 @@
 #     Example 2: (Fowlpox[All Fields] OR FPV[All Fields]) AND (Reticuloendotheliosis[All Fields] OR REV[All Fields])
 #
 # Second, provide an e-mail address (optional). You can just say no.
+# Third, the maximum number of results desired.
 #
 # I'm including an example of the output table.
 
@@ -95,14 +96,14 @@ for article in results:
                                 if a['firstname'] is not None and a['firstname'] is not None])
 
     # Collect the article info
-    articles_df = articles_df.append({'PMID': article.pubmed_id.partition('\n')[0],
-                                      'Publication_date': article.publication_date,
-                                      'Title': article.title,
-                                      'Authors': string_authors,
-                                      'Journal': string_journal,
-                                      'DOI': article.doi,
-                                      'Keywords': string_keywords,
-                                      'Abstract': string_abstract}, ignore_index=True)
+    articles_df = articles_df.append({u'PMID': article.pubmed_id.partition('\n')[0],
+                                      u'Publication_date': article.publication_date,
+                                      u'Title': str(article.title),
+                                      u'Authors': string_authors,
+                                      u'Journal': string_journal,
+                                      u'DOI': article.doi,
+                                      u'Keywords': string_keywords,
+                                      u'Abstract': string_abstract}, ignore_index=True)
 
 # Print the top 5 rows of the dataframe:
 print("First 5 results:")
