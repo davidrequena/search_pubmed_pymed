@@ -31,12 +31,12 @@ You need to have installed Python 3 (https://www.python.org/downloads/) and the 
 Just doble-click on the script to execute it. This can also be called from the Terminal.
 Then, the program will ask you to:
 
-  Provide a query. Examples:
+First, provide a query. Here you have two equivalent examples:
 
-    (Fowlpox OR FPV) AND (Reticuloendotheliosis OR REV)
-    (Fowlpox[All Fields] OR FPV[All Fields]) AND (Reticuloendotheliosis[All Fields] OR REV[All Fields])
+    Example 1: (Fowlpox OR FPV) AND (Reticuloendotheliosis OR REV)
+    Example 2: (Fowlpox[All Fields] OR FPV[All Fields]) AND (Reticuloendotheliosis[All Fields] OR REV[All Fields])
 
-  Provide an e-mail address (optional). You can just say no.
+Second, provide an e-mail address (optional). You can just say no.
 
 I'm including an example of the output table.
 
